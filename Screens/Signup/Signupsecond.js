@@ -21,7 +21,7 @@ class Signupsecond extends Component {
           <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white',color:'black'}} label='Address' textContentType={"telephoneNumber"}  />
 
           <TouchableOpacity onPress={()=>{
-                this.props.navigation.navigate('Home')
+                this.props.navigation.navigate('BottomTabNavigator')
               }}>
               <View style={{backgroundColor:'#6EF31A',height:40,justifyContent:'center',marginHorizontal:50,marginBottom:10}}>
                     <Text style={{color:'white',alignSelf:'center'}}>NEXT</Text>

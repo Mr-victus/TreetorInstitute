@@ -20,7 +20,7 @@ const Main=createStackNavigator({
 
 const SwitchNavigation =createSwitchNavigator({
     Main:Main,
-    //BottomTabNavigator:BottomTabNavigator
+    BottomTabNavigator:BottomTabNavigator
 })
 
 const AppContainer = createAppContainer(SwitchNavigation);
