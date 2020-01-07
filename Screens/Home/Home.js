@@ -34,29 +34,24 @@ class Home extends Component {
     return (
       <View style={{backgroundColor:'#fafafa',justifyContent:'space-evenly',height:'100%',width:'100%'}}>
         <View style={{flexDirection:'row',justifyContent:'space-evenly',alignContent:'center',alignItems:'center'}}>
+         
+        <TouchableOpacity onPress={()=>this.props.navigation.navigate('Batch')}>
           <View style={{alignContent:'center',justifyContent:'center',alignItems:'center',}}>
-            {/* <View style={{backgroundColor:'white',height:'90',width:'90'}}>
-                <Image source={require('../../assets/rank.png')}/>
-
-            </View> */}
             <View style={{backgroundColor:'white',borderRadius:17,height:90,width:90,alignContent:'center',justifyContent:'center',alignItems:'center',shadowColor: "#000",shadowOffset: {width: 0,height: 4,},shadowOpacity: 0.32,shadowRadius: 5.46,elevation: 9,}}> 
             <Image source={require('../../assets/rank.png')}/>
             </View>
-            <Text>Rank</Text>
+            <Text>Batch</Text>
           </View>
-
+          </TouchableOpacity>
+          <TouchableOpacity onPress={()=>this.props.navigation.navigate('AllTeachers')}>
           <View style={{alignContent:'center',justifyContent:'center',alignItems:'center'}}>
-            {/* <View style={{backgroundColor:'white',height:'90',width:'90'}}>
-                <Image source={require('../../assets/rank.png')}/>
-
-            </View> */}
             <View style={{backgroundColor:'white',borderRadius:17,height:90,width:90,alignContent:'center',justifyContent:'center',alignItems:'center',shadowColor: "#000",shadowOffset: {width: 0,height: 4,},shadowOpacity: 0.32,shadowRadius: 5.46,elevation: 9,}}> 
 
             <Image source={require('../../assets/school.png')}/>
             </View>
-            <Text>Institute</Text>
+            <Text>All Teachers</Text>
           </View>
-
+          </TouchableOpacity>
         </View>
         <View style={{flexDirection:'row',justifyContent:'space-evenly',alignContent:'center',alignItems:'center'}}>
           <View style={{alignContent:'center',justifyContent:'center',alignItems:'center'}}>

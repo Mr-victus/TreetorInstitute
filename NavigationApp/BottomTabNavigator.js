@@ -9,6 +9,12 @@ import Rank from '../Screens/Home/Rank'
 import Curriculam from '../Screens/Home/Curriculam'
 import Diary from '../Screens/Home/Diary'
 import AllStudent from '../Screens/Home/AllStudent'
+import AllTeachers from '../Screens/Home/AllTeachers'
+
+import Batch from '../Screens/Home/Batch'
+import BatchCreation from '../Screens/Home/BatchCreation'
+
+
 
 import Institute from '../Screens/Home/Institute'
 import Forum from '../Screens/Home/Forum'
@@ -18,6 +24,7 @@ import Attendance from '../Screens/Classroom/Attendance';
 import Review from '../Screens/Classroom/Review';
 
 
+
 const home=createStackNavigator({
   Home:{screen:Home},
   Rank:{screen:Rank},
@@ -25,7 +32,10 @@ const home=createStackNavigator({
   Diary:{screen:Diary},
   Institute:{screen:Institute},
   Forum:{screen:Forum},
-  AllStudent:{screen:AllStudent}
+  AllStudent:{screen:AllStudent},
+  Batch:{screen:Batch},
+  BatchCreation:{screen:BatchCreation},
+  AllTeachers:{screen:AllTeachers}
 })
 
 const classroom=createStackNavigator({
