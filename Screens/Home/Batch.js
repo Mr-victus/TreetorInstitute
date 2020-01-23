@@ -6,7 +6,8 @@ class Batch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        text:""
+        batchName:"",
+        periods:0
     };
   }
 
@@ -16,8 +17,8 @@ class Batch extends Component {
         <TextInput
         mode='outlined'
         label='Batch Name'
-        value={this.state.text}
-        onChangeText={text => this.setState({ text })}
+        value={this.state.batchName}
+        onChangeText={batchName => this.setState({ batchName })}
         theme={{ colors: { primary: "#6EF31A" }}}
       />
 
@@ -25,11 +26,13 @@ class Batch extends Component {
         mode="outlined"
         label='Number of periods'
         keyboardType='numeric'
+        value={this.state.periods}
+        onChangeText={periods => this.setState({ periods })}
         theme={{ colors: { primary: "#6EF31A" }}}
       />
 
         <TouchableOpacity onPress={()=>{
-                this.props.navigation.navigate('BatchCreation')
+                this.props.navigation.navigate('BatchCreation',{batchName:this.state.batchName,periods:this.state.periods})
               }}>
               <View style={{backgroundColor:'#6EF31A',height:40,justifyContent:'center',marginHorizontal:50,marginBottom:10,marginTop:20}}>
                     <Text style={{color:'white',alignSelf:'center'}}>NEXT</Text>

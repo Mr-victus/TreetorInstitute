@@ -9,18 +9,19 @@ import Login from '../Screens/Login'
 import Signupfirst from '../Screens/Signup/Signupfirst'
 import Signupsecond from '../Screens/Signup/Signupsecond'
 import Home from '../Screens/Home/Home'
+import BottomNavigation from '../Screens/BottomNavigation'
 const Main=createStackNavigator({
   Login:{screen:Login},
   Signupfirst:{screen:Signupfirst},
   Signupsecond:{screen:Signupsecond},
-  Home:{screen:Home}
+  //BottomNavigation:{screen:BottomNavigation}
   
 })
 
 
 const SwitchNavigation =createSwitchNavigator({
     Main:Main,
-    BottomTabNavigator:BottomTabNavigator
+    BottomNavigation:BottomNavigation
 })
 
 const AppContainer = createAppContainer(SwitchNavigation);

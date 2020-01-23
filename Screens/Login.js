@@ -1,12 +1,40 @@
 import React, { Component } from 'react';
 import { View, Text,Image,TouchableOpacity,SafeAreaView} from 'react-native';
 import { TextInput } from 'react-native-paper';
+import axios from 'axios'
 class Login extends Component {
   static navigationOptions = { header: null }
   constructor(props) {
     super(props);
     this.state = {
+      email:'institute1@gmail.com',
+      password:'password'
     };
+  }
+  callapi(){
+    console.log('jii')
+    let url='http://192.168.1.103:8000/institutes-login/' //username,password,institute_name,institute_phone,institute_address
+    axios.get(url,{
+      params:{
+        username:this.state.email,
+      password:this.state.password,
+     
+      }
+      
+    }).then((response)=>{
+      if(response.data.status)
+      {
+        this.props.navigation.navigate('BottomNavigation',{auth_key:response.data.key})
+        
+      }
+      else
+      {
+        alert('already exists')
+      }
+    }).catch((err)=>{
+      console.log(err)
+    })
+    
   }
 
   render() {
@@ -16,10 +44,10 @@ class Login extends Component {
           <View style={{alignContent:'space-between'}} >
               {/* for treetor logo */}
               <Image style={{alignSelf:'center',marginBottom:60}} source={require('../assets/treetorlogo.png')}/>
-              <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white',color:'black'}} label='email' />
-              <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white'}} label='password'  selectionColor='#6EF31A' secureTextEntry={true} />
+              <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white',color:'black'}} label='email' value={this.state.email} onChangeText={(text)=>this.setState({email:text})} />
+              <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white'}} label='password'  selectionColor='#6EF31A' value={this.state.password} onChangeText={(text)=>this.setState({password:text})} secureTextEntry={true} />
               <TouchableOpacity onPress={()=>{
-                this.props.navigation.navigate('BottomTabNavigator')
+                this.callapi()
               }}>
               <View style={{backgroundColor:'#6EF31A',height:40,justifyContent:'center',marginHorizontal:50,marginBottom:10}}>
                     <Text style={{color:'white',alignSelf:'center'}}>LOGIN</Text>

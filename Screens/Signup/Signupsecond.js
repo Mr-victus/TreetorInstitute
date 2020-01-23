@@ -15,9 +15,9 @@ class Signupsecond extends Component {
             <View style={{alignContent:'space-between'}} >
           <Image style={{alignSelf:'center',marginBottom:60}} source={require('../../assets/treetorlogo.png')}/>
           <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white',color:'black'}} label='Institute Name' />
-          <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white',color:'black'}} label='Institute Category' textContentType='password'  />
-          <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white',color:'black'}} label='Admin Name' textContentType='password'  />
-          <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white',color:'black'}} label='Admin PhoneNumber' textContentType={"telephoneNumber"}  />
+          {/* <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white',color:'black'}} label='Institute Category' textContentType='password'  /> */}
+          {/* <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white',color:'black'}} label='Admin Name' textContentType='password'  />
+          <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white',color:'black'}} label='Admin PhoneNumber' textContentType={"telephoneNumber"}  /> */}
           <TextInput style={{marginHorizontal:50,marginBottom:20,backgroundColor:'white',color:'black'}} label='Address' textContentType={"telephoneNumber"}  />
 
           <TouchableOpacity onPress={()=>{

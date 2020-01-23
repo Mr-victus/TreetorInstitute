@@ -31,6 +31,7 @@ class Home extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <View style={{backgroundColor:'#fafafa',justifyContent:'space-evenly',height:'100%',width:'100%'}}>
         <View style={{flexDirection:'row',justifyContent:'space-evenly',alignContent:'center',alignItems:'center'}}>
