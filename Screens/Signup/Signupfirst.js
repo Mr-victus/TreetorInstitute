@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text,Image,SafeAreaView,TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import axios from 'axios'
+import Config from 'react-native-config'
 class Signupfirst extends Component {
   constructor(props) {
     super(props);
@@ -17,8 +18,8 @@ class Signupfirst extends Component {
   }
 
   callapi(){
-    console.log('jii')
-    let url='http://192.168.1.103:8000/institutes-signup/' //username,password,institute_name,institute_phone,institute_address
+    console.log('jii',Config.BASE_URL)
+    let url=Config.BASE_URL+'/institutes-signup/' //username,password,institute_name,institute_phone,institute_address
     axios.get(url,{
       params:{
         username:this.state.email,

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text,TouchableOpacity } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import { Avatar } from 'react-native-elements';
+import Config from 'react-native-config'
 import axios from 'axios'
 class AllTeachers extends Component {
     static navigationOptions = {
@@ -35,7 +36,7 @@ class AllTeachers extends Component {
 
   handleInvite(){
     let auth_key=this.props.screenProps.auth_key
-    let url='http://192.168.1.103:8000/institutes-invite-teacher/'
+    let url=Config.BASE_URL+'/institutes-invite-teacher/'
 
     axios.get(url,{
         params:{
@@ -58,7 +59,7 @@ class AllTeachers extends Component {
     console.log('jii')
     let arr=[]
     let tid=[]
-    let url='http://192.168.1.103:8000/institutes-all-teachers/' //username,password,institute_name,institute_phone,institute_address
+    let url=Config.BASE_URL+'/institutes-all-teachers/' //username,password,institute_name,institute_phone,institute_address
     axios.get(url,{
       params:{
         auth_key:auth_key,

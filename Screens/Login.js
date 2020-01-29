@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text,Image,TouchableOpacity,SafeAreaView} from 'react-native';
 import { TextInput } from 'react-native-paper';
 import axios from 'axios'
+import Config from "react-native-config";
 class Login extends Component {
   static navigationOptions = { header: null }
   constructor(props) {
@@ -12,8 +13,8 @@ class Login extends Component {
     };
   }
   callapi(){
-    console.log('jii')
-    let url='http://192.168.1.103:8000/institutes-login/' //username,password,institute_name,institute_phone,institute_address
+    console.log('jii',Config.BASE_URL)
+    let url=Config.BASE_URL+'/institutes-login/' //username,password,institute_name,institute_phone,institute_address
     axios.get(url,{
       params:{
         username:this.state.email,
@@ -34,6 +35,7 @@ class Login extends Component {
     }).catch((err)=>{
       console.log(err)
     })
+    
     
   }
 

@@ -3,6 +3,7 @@ import { View, Text,TouchableOpacity } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import { Avatar } from 'react-native-elements';
 import axios from 'axios'
+import Config from 'react-native-config'
 import { ScrollView } from 'react-native-gesture-handler';
 class AllStudents extends Component {
     static navigationOptions = {
@@ -37,7 +38,7 @@ class AllStudents extends Component {
 
   handleInvite(){
     let auth_key=this.props.screenProps.auth_key
-    let url='http://192.168.1.103:8000/institutes-add-students/'
+    let url=Config.BASE_URL+'/institutes-add-students/'
     let arr=[]
     let arr2=[]
     let str=`[${this.state.search}]`
@@ -66,7 +67,7 @@ class AllStudents extends Component {
     console.log('jii')
     let arr=[]
     let tid=[]
-    let url='http://192.168.1.103:8000/institutes-all-students/' //username,password,institute_name,institute_phone,institute_address
+    let url=Config.BASE_URL+'/institutes-all-students/' //username,password,institute_name,institute_phone,institute_address
     axios.get(url,{
       params:{
         auth_key:auth_key,
